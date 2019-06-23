@@ -1,0 +1,71 @@
+<div ng-controller="mybackground">
+    <div class="wrap">
+        <!--导航栏部分-->
+        <div class="nav">
+            <div class="headline">
+                <div class="headline">萝卜多后台管理系统</div>
+            </div>
+            <div class="nav-boredr">
+                <div class="list">
+                    <div class="head-li-btn">
+                        <span>管理员</span>
+                    </div>
+                    <div class="head-li-btn">
+                        <span class="user">admin</span>
+                    </div>
+                    <div class="head-li-btn">
+                        <img src="../img/electricity.png" height="16" width="16"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--侧边以及手风琴组件-->
+        <div class="accordion">
+            <uib-accordion class="close-others">
+                <div class="test" uib-accordion-group id="menu-colour-one" is-open="status.one">
+                    <uib-accordion-heading>
+                        <span class="glyphicon glyphicon-pencil accordion-pen-gray Font-white"/>
+                        <span class="Font-white">后台管理</span>
+                        <i class="pull-right glyphicon Font-white"
+                           ng-class="{'glyphicon-chevron-down': status.one, 'glyphicon-chevron-right': !status.one}"/>
+                    </uib-accordion-heading>
+                    <ui class="Font-white">
+                        <li class="item">模块管理</li>
+                        <li class="item">角色管理</li>
+                        <li class="item">密码修改</li>
+                        <li class="item">账户管理</li>
+                    </ui>
+                </div>
+                <div class="test" uib-accordion-group id="menu-colour-two" is-open="status.two">
+                    <uib-accordion-heading>
+                        <span class="glyphicon glyphicon-pencil accordion-pen-gray Font-white"></span>
+                        <span class="Font-white">信息管理</span>
+                        <i class="pull-right glyphicon Font-white"
+                           ng-class="{'glyphicon-chevron-down': status.two, 'glyphicon-chevron-right': !status.two}"></i>
+                    </uib-accordion-heading>
+                    <ui class="Font-white">
+                        <li class="item">公司列表</li>
+                        <li class="item">职位列表</li>
+                    </ui>
+                </div>
+                <div class="test" uib-accordion-group id="menu-colour-three" is-open="status.three">
+                    <uib-accordion-heading>
+                        <span class="glyphicon glyphicon-pencil accordion-pen-gray Font-white"></span>
+                        <span class="Font-white">内容管理</span>
+                        <i class="pull-right glyphicon Font-white"
+                           ng-class="{'glyphicon-chevron-down': status.three, 'glyphicon-chevron-right': !status.three}"></i>
+                    </uib-accordion-heading>
+                    <ui class="Font-white">
+                        <li class="item" ng-click="list()">Article列表</li>
+                    </ui>
+                </div>
+            </uib-accordion>
+        </div>
+        <!---->
+        <div class="page-wrapper">
+            <div data-ui-view="">
+
+            </div>
+        </div>
+    </div>
+</div>

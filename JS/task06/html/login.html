@@ -1,0 +1,36 @@
+<!--这是我的控制器-->
+<div class="background" ng-controller="mylogin">
+    <!--这是我的表单验证-->
+    <form name="myForm">
+        <div class="log-in">
+            <p class="title">后台登陆</p>
+            <!--这是表单1-->
+            <div class="form-group">
+                <div class="import-block">
+                    <img src="img/usr.png" height="32" width="32"/>
+                    <input type="text" class="import" id="user" placeholder="请输入用户名" name="name" ng-model="name"
+                           required/>
+                </div>
+                <!--这是ng-if-->
+                <div ng-if="!myForm.name.$pristine || myForm.name.$touched" ng-messages="myForm.name.$error" role="alert">
+                    <div ng-message="required">不能为空</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="import-block">
+                    <img src="img/lock.png" height="32" width="32"/>
+                    <input type="text"  class="import" id="passWord"  name="password" ng-minlength="6" ng-maxlength="18"
+                           placeholder="请输入密码"
+                           ng-model="user.password" required/>
+                </div>
+                <div ng-if="!myForm.password.$pristine || myForm.password.$touched" ng-messages="myForm.password.$error"  role="alert">
+                    <div ng-message="required">不能为空</div>
+                    <div ng-message="minlength">最短6位</div>
+                    <div ng-message="maxlength">最长18位</div>
+                </div>
+                <p class="user-mode"></p>
+                <button type="button" class="btns" ng-click="start()">登陆</button>
+            </div>
+        </div>
+    </form>
+</div>
