@@ -63,4 +63,5 @@ function color() {
     return"rgb("+r+','+g+','+b+")"
     //这是一个函数，
     //取回返回值
+    //test
 }
