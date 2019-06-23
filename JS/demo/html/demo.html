@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>九宫格</title>
+    <link rel="stylesheet" href="../../task01.js/css/index.css">
+    <script src="../../../task5-js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<input type="text" id="question">
+<button id="btn" onclick="btns()">submit</button>
+<div id="answer"></div>
+<button type="button" onclick="btns()">开关</button>
+<input type="text" id="test">
+<input type="text" id="test-one">
+<div>
+    <button>点击</button>
+    <p>隐藏</p>
+    <span>这是</span>
+</div>
+<ul class="pagination pull-right ng-isolate-scope" ng-if="vm.total" total="25">
+    <style>
+        .pagination>li>a[disabled],
+        .pagination>li>a[disabled]:hover {
+            cursor: not-allowed;
+        }
+    </style>
+    <li class="pull-left paginationCenter">
+        每页显示
+        <input type="text" class="paginationGo text-center ng-pristine ng-untouched ng-valid" ng-model="size" ng-change="changeSize()">
+        条
+    </li>
+
+    <li><a ng-disabled="isDisabled(1)" ng-click="goPage(1)">首页</a></li>
+    <li><!-- ngIf: isHavePrePage() --><a ng-if="isHavePrePage()" ng-click="goPage(activePage - 1)" class="ng-scope"> &lt; </a><!-- end ngIf: isHavePrePage() --></li>
+
+    <!-- ngRepeat: li in pageList track by $index --><li ng-repeat="li in pageList track by $index" ng-class="{'active': isActive(li)}" class="ng-scope">
+    <a ng-disabled="isDisabled(li)" ng-click="goPage(li)" class="ng-binding"> 1 </a>
+</li><!-- end ngRepeat: li in pageList track by $index --><li ng-repeat="li in pageList track by $index" ng-class="{'active': isActive(li)}" class="ng-scope active">
+    <a ng-disabled="isDisabled(li)" ng-click="goPage(li)" class="ng-binding" disabled="disabled"> 2 </a>
+</li><!-- end ngRepeat: li in pageList track by $index --><li ng-repeat="li in pageList track by $index" ng-class="{'active': isActive(li)}" class="ng-scope">
+    <a ng-disabled="isDisabled(li)" ng-click="goPage(li)" class="ng-binding"> 3 </a>
+</li><!-- end ngRepeat: li in pageList track by $index -->
+
+    <li><!-- ngIf: isHaveNextPage() --><a ng-if="isHaveNextPage()" ng-click="goPage(activePage + 1)" class="ng-scope"> &gt; </a><!-- end ngIf: isHaveNextPage() --></li>
+    <li><a ng-disabled="isDisabled(totalPage)" ng-click="goPage(totalPage)">末页</a></li>
+    <li>
+        去第
+        <input type="text" class="paginationGo text-center ng-pristine ng-untouched ng-valid" ng-model="jumpPage" ng-change="changeInput()">
+        页
+        <a class="pull-right" style="border-radius:0" ng-click="goPage(jumpPage)">确定</a>
+    </li>
+</ul>
+</body>
+<script src="../js/demo.js"></script>
+</html>
