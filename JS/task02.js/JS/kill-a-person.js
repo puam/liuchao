@@ -121,7 +121,7 @@ $(document).ready(function () {
     $(".quit").click(function () {
         alert("确定要返回首页吗？");
         sessionStorage.clear();
-        window.location.href = "../html/index.html";
+        window.location.href = "../index.html";
     });
 });
 

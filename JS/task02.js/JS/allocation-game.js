@@ -106,5 +106,5 @@ function obtainf() {
     window.location.href="../html/check-identity.html"
 }
 function back() {
-    window.location.href="../html/index.html"
+    window.location.href="../index.html"
 }

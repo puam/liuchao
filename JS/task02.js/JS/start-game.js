@@ -19,7 +19,7 @@ $().ready(function () {
     $(".quit").click(function () {
         alert("确定要退出吗？");
         sessionStorage.clear();
-        window.location.href = "../html/index.html"
+        window.location.href = "../index.html"
     });
     //按钮，第一个先检测是否是null进行判断。
     $(".btn-one").eq(-1).on("click", function () {

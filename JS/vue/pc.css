@@ -1,5 +1,12 @@
 body{
     margin: 0;
-    background: #f8a74e;
-    color: #f8a74e;
+    /*background: #f8a74e;*/
+    /*color: #f8a74e;*/
+}
+/*.photo{*/
+    /*vertical-align: center;*/
+/*}*/
+.z{
+    vertical-align: center;
+
 }

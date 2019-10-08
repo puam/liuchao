@@ -2,7 +2,7 @@ $(function () {
     // numberDays();
     $(".home").click(function () {
         alert("确定要返回主页吗？");
-        window.location.href = "../html/index.html";
+        window.location.href = "../index.html";
         sessionStorage.clear();
     });
     $(".to-game").click(function () {
